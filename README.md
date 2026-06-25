@@ -36,7 +36,7 @@ func main() {
     }
 
     resp, err := client.Chat(context.Background(), simplellm.ChatRequest{
-        Model: "deepseek-r1",
+        Model: "DeepSeek-Chat-V3.1",
         Messages: []simplellm.Message{
             {Role: "user", Content: simplellm.Ptr("Explain Occam's Razor in one sentence.")},
         },
@@ -54,7 +54,7 @@ func main() {
 import "io"
 
 stream, err := client.ChatStream(context.Background(), simplellm.ChatRequest{
-    Model: "deepseek-r1",
+    Model: "DeepSeek-Chat-V3.1",
     Messages: []simplellm.Message{
         {Role: "user", Content: simplellm.Ptr("Count to five.")},
     },

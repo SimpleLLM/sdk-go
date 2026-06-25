@@ -279,8 +279,8 @@ func TestTranscribeMultipart(t *testing.T) {
 			case "model":
 				foundModel = true
 				data, _ := io.ReadAll(part)
-				if string(data) != "whisper-1" {
-					t.Errorf("model field: got %q, want %q", data, "whisper-1")
+				if string(data) != "whisper-large-v3" {
+					t.Errorf("model field: got %q, want %q", data, "whisper-large-v3")
 				}
 			}
 		}
@@ -303,7 +303,7 @@ func TestTranscribeMultipart(t *testing.T) {
 	got, err := c.Transcribe(context.Background(), simplellm.TranscribeRequest{
 		File:     []byte("fakeaudio"),
 		Filename: "audio.mp3",
-		Model:    "whisper-1",
+		Model:    "whisper-large-v3",
 	})
 	if err != nil {
 		t.Fatalf("Transcribe: %v", err)
